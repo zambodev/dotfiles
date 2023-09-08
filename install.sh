@@ -1,4 +1,3 @@
-#!/usr/bin/env sh
 
 # Update
 sudo apt-get update -y && sudo apt-get upgrade -y </dev/null
