@@ -13,7 +13,7 @@ HISTFILESIZE=20000
 shopt -s checkwinsize
 
 # Prompt
-PS1='\[\e[32;1m\]\u\[\e[0m\]@\[\e[94m\]\h\[\e[0m\]:\[\e[96m\]\w\[\e[0m\]$(__git_ps1)\n\\$ '
+PS1='\[\e[32;1m\]\u\[\e[0m\]@\[\e[94m\]\h\[\e[0m\]:\[\e[96m\]\w\[\e[0m\]$(__git_ps1) \e[31m$CONDA_DEFAULT_ENV\e[0m\n\\$ '
 
 # Commands completition
 bind '"\e[A": history-search-backward'
@@ -27,3 +27,17 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/null/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/null/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/null/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/null/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
