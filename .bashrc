@@ -22,7 +22,7 @@ if [[ -z "${VIRTUAL_ENV}" ]]; then
 else
     PYTHON_VENV=$(basename "${VIRTUAL_ENV}")
 fi
-PS1='\[\e[32;1m\]\u\[\e[0m\]@\[\e[94m\]\h\[\e[0m\]:\[\e[96m\]\w\[\e[0m\]$(__git_ps1) \e[91m$PYTHON_VENV\e[0m\n\\$ '
+PS1='\[\e[32;1m\]\u\[\e[0m\]@\[\e[94m\]\h\[\e[0m\]:\[\e[96m\]\w\[\e[0m\]${PS1_CMD1} \[\e[91m\]${PYTHON_VENV}\n\[\e[0m\]\t \\$ '
 
 # Commands completition
 bind '"\e[A": history-search-backward'
