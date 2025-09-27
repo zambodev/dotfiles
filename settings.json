@@ -1,0 +1,7 @@
+{
+    "files.autoSave": "onFocusChange",
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "Jetbrains Mono",
+    "terminal.integrated.fontFamily": "Jetbrains Mono",
+    "chat.commandCenter.enabled": false,
+}
