@@ -1,6 +1,7 @@
 require("config.lazy")
 
--- Gruvboxv
+-- Config
+vim.opt.clipboard = 'unnamedplus'
 vim.wo.number = true
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
@@ -10,7 +11,17 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4   
 vim.opt.smartindent = true
 
--- Diagnostics
+-- diagnostics
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(event)
+    vim.keymap.set('n', '<leader>i', function()
+      vim.lsp.buf.hover {
+        border = 'rounded',
+      }
+    end, { buffer = event.buf })
+  end,
+})
+
 vim.diagnostic.config({
   virtual_text = false,      -- no inline text
   virtual_lines = false,     -- no virtual lines
@@ -35,7 +46,6 @@ vim.api.nvim_create_autocmd("CursorHold", {
 
 -- Remaps
 vim.g.leader = " "
-vim.keymap.set('n', '<leader>i', vim.lsp.buf.hover )
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float )
 vim.keymap.set("n", "<leader>w", ":w<cr>")
 vim.keymap.set("n", "<leader>o", ":noh")
@@ -64,6 +74,11 @@ vim.keymap.set("n", "<leader>j", "<C-w>j")
 vim.keymap.set("n", "<leader>k", "<C-w>k")
 vim.keymap.set("n", "<leader>h", "<C-w>h")
 vim.keymap.set("n", "<leader>l", "<C-w>l")
+vim.keymap.set("n", "<leader>J", "<C-w>J")
+vim.keymap.set("n", "<leader>K", "<C-w>K")
+vim.keymap.set("n", "<leader>H", "<C-w>H")
+vim.keymap.set("n", "<leader>L", "<C-w>L")
+
 vim.keymap.set("n", "<S-h>", "gt")
 vim.keymap.set("n", "<S-l>", "gT")
 
