@@ -14,7 +14,7 @@ PROMPT_DIRTRIM=3
 shopt -s checkwinsize
 
 # Prompt
-PS1='\[\e[32;1m\]\u\[\e[0m\]@\[\e[94m\]\h\[\e[0m\]:\[\e[96m\]\w\[\e[0m\]$(__git_ps1) \[\e[91m\e[0m\$\] '
+PS1='\[\e[32;1m\]\u\[\e[97m\]@\[\e[94m\]\h\[\e[0m\]:\[\e[96m\]\w\[\e[0m\]\[$(__git_ps1)\] \[\e[97m\]\$\[\e[0m\] '
 
 # Commands completition
 bind '"\e[A": history-search-backward'
@@ -27,4 +27,6 @@ alias grep='grep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+export PATH=$PATH:/usr/local/go/bin
 
